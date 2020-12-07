@@ -1,0 +1,6 @@
+from math import (cos, sin, tan, radians)
+nu = int(input('Digite um ângulo: '))
+s = sin(radians(nu))
+c = cos(radians(nu))
+t = tan(radians(nu))
+print('Com o valor {}\nseu seno é {}\nseu cosseno é {}\nsua tangente é {}'.format(nu, s, c, t))
