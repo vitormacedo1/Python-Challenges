@@ -6,23 +6,22 @@ def leiaInt(msg):
     letters and other things: print an error mensage 
     and ask again.
     """
-    ok = False
     while True:
-        n = str(input(msg))
-        if n.isnumeric():
-            nu = int(n)
-            ok = True
-            break
+        try:
+            n = int(input(msg))
+        except (ValueError, TypeError):
+            print('\033[0;31mERROR. Digite um numero inteiro válido!\033[m')
+            continue
         else:
-            print('\033[0;31mERROR. TENTE NOVAMENTE.\033[m')
-            n = str(input('Digite um numero: '))
-    if ok:
-        return nu
-        
+            return n
 
 
-## MAIN PROGRAM ##
-
-n = leiaInt('Digite um numero: ')
-print(f'O numero digitado foi {n}')
-help(leiaInt)
+def leiaFloat(msg):
+    while True:
+        try:
+            n = float(input(msg))
+        except (ValueError, TypeError):
+            print('\033[0;31mERROR. Digite um numero real válido!\033[m')
+            continue
+        else:
+            return n
